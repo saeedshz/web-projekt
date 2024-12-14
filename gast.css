@@ -1,0 +1,91 @@
+/* استایل فرم ثبت‌نام */
+#signup-form {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+
+#signup-form form {
+    width: 80%;
+    max-width: 500px;
+    margin: auto;
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+#signup-form label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+#signup-form input[type="text"],
+#signup-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#signup-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#signup-form button:hover {
+    background-color: #0056b3;
+}
+
+/* استایل نظرات کاربران */
+#omdömen {
+    width: 100%;
+    padding: 70px 0;
+}
+
+.omdöm-row {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.omdöm-col {
+    flex-basis: 28%;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px 3px #86bdd0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.omdöm-col p {
+    font-size: 14px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.user img {
+    width: 40px;
+    margin: 20px;
+    border-radius: 3px;
+}
+
+.omdöm-col:hover {
+    transform: translateY(7px);
+}

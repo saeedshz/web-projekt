@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute; /* قرار دادن همبرگر در گوشه سمت چپ */
+    top: 1.2rem; /* فاصله از بالای صفحه */
+    left: 1rem;
+}
+
+.hamburger div {
+    height: 4px;
+    width: 100%;
+    background-color: white;
+    border-radius: 2px;
+}
+
+/* Menu */
+.menu {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    position: absolute;
+    top: 4rem;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.552);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    gap: 3px;
+}
+
+
+.menu.active {
+    display: flex; /* Show the menu when active */
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menu li a {
+    text-decoration:none;
+    color: #333;
+    padding: 10px 20px;
+    display:block;
+
+}
+
+.menu li a:hover {
+    background-color: #f4f4f4;
+}
+header {
+    background:rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+nav {
+    position: sticky; /*      header */
+    top: 0; /*    header */
+    left: 0; /*   */
+    width: 100%; /*   header */
+    background:rgba(0, 0, 0, 0.6); /*   */
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* margin-top: 0;
+    padding:0; */
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration:none;
+    font-size: 1.2rem;
+}
+
+.header-content {
+    margin-top: 1rem;
+}
+
+.upload-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.upload-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.upload-form input[type="file"],
+.upload-form textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.upload-form button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.upload-form button:hover {
+    background: #0056b3;
+}
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

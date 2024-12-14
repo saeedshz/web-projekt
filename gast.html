@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self';">
+    <title>Gäst</title>
+    <link rel="stylesheet" href="gast.css">
+</head>
+<body>
+    <nav>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        
+        <!-- Menu Items -->
+        <ul class="menu" id="menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="login.html">Logga in</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="form.html">Kontakt</a></li>
+        </ul>
+    
+    </nav>
+    <header>
+        <h1>Register som gäst</h1> <!-- Rubrik för inloggningssidan -->
+    </header>
+
+    <main>
+        <section id="signup-form">
+            
+            <form id="userForm">
+                <label for="name">Namn</label>
+                <input type="text" id="name" name="name" placeholder="Ange ditt namn här" required>
+        
+                <label for="image">Bild:</label>
+                <input type="file" id="image" name="image" accept="image/*" placeholder="Ladda upp profil bilden här"required>
+        
+                <button type="submit">Register</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Webbplats. Alla rättigheter förbehållna.</p>
+    </footer>
+
+    <script src="gast.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

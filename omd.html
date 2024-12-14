@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه ثبت‌نام</title>
+    <link rel="stylesheet" href="omd.css">
+</head>
+<body>
+    <header>
+        <h1>صفحه نظرات کاربران</h1>
+    </header>
+
+    <!-- فرم ثبت نام -->
+    <section id="signup-form">
+        <h2>ثبت‌نام کاربر</h2>
+        <form id="userForm">
+            <label for="name">نام:</label>
+            <input type="text" id="name" name="name" placeholder="نام خود را وارد کنید" required>
+
+            <label for="image">عکس:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+
+            <button type="submit">ثبت نام</button>
+        </form>
+    </section>
+
+    <!-- قسمت نظرات -->
+    <section id="omdömen">
+        <div class="titel-text">
+            <p>نظرات</p>
+            <h1>نظرات کاربران</h1>
+        </div>
+
+        <div class="omdöm-row" id="omdomRow">
+            <!-- نظرات کاربران در اینجا اضافه خواهند شد -->
+        </div>
+    </section>
+
+    <footer>
+        <p>اطلاعات تماس</p>
+    </footer>
+
+    <script src="java1.js"></script>
+    <script>
+        // انتخاب عناصر فرم
+        const userForm = document.getElementById('userForm');
+        const omdomRow = document.getElementById('omdomRow');
+
+        // رویداد ارسال فرم
+        userForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // جلوگیری از ارسال فرم
+
+            // گرفتن مقادیر ورودی‌ها
+            const userName = document.getElementById('name').value;
+            const imageInput = document.getElementById('image').files[0];
+
+            if (userName && imageInput) {
+                const reader = new FileReader();
+                
+                // پس از بارگذاری تصویر
+                reader.onload = function(e) {
+                    // ساخت یک بخش جدید برای نظر کاربر
+                    const userDiv = document.createElement('div');
+                    userDiv.classList.add('omdöm-col');
+
+                    // بخش اطلاعات کاربر
+                    const userInfo = `
+                        <div class="user">
+                            <img src="${e.target.result}" alt="عکس ${userName}">
+                            <div class="user-info">
+                                <h4>${userName}</h4>
+                            </div>
+                        </div>
+                        <p>کاربر جدید با موفقیت اضافه شد.</p>
+                    `;
+
+                    // اضافه کردن محتوای HTML به div
+                    userDiv.innerHTML = userInfo;
+
+                    // اضافه کردن div به omdöm-row
+                    omdomRow.appendChild(userDiv);
+
+                    // پاک کردن فرم برای ورودی‌های جدید
+                    userForm.reset();
+                };
+
+                // خواندن فایل تصویر
+                reader.readAsDataURL(imageInput);
+            } else {
+                alert('لطفاً نام و عکس خود را وارد کنید.');
+            }
+        });
+    </script>
+</body>
+</html>

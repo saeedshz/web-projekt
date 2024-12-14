@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobbsökare profil</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <nav>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        
+        <!-- Menu Items -->
+        <ul class="menu" id="menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="login.html">Logga in</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="form.html">Kontakt</a></li>
+        </ul>
+    
+    </nav>
+    <header>
+        <h1>Profil för jobbsökare</h1>
+    </header>
+    <main>
+        <h2>{{ username }}</h2>
+        <p>{{ description }}</p>
+        <p><a href="{{ cv_url }}" target="_blank">Visa CV</a></p>
+        <p>Personligt brev:</p>
+        <p>{{ personal_letter }}</p>
+        <a href="form.html?user={{ username }}" class="btn-kontakt">Kontakta</a>
+    </main>
+    <script src="profile.js"></script>
+    <footer>
+        <p>Alla rättigheter reserverade &copy; 2024</p>
+    </footer>
+</body>
+</html>

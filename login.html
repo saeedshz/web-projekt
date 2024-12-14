@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self';">
+    <title>Logga in</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <nav>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        
+        <!-- Menu Items -->
+        <ul class="menu" id="menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="login.html">Logga in</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="form.html">Kontakt</a></li>
+        </ul>
+    
+    </nav>
+    <header>
+        <h1>Logga in</h1> <!-- Rubrik för inloggningssidan -->
+    </header>
+
+    <main>
+        <form id="login-form" action="/login" method="POST" autocomplete="off">
+            <!-- CSRF-token för säkerhet -->
+            <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+
+            <label for="username">Användarnamn:</label>
+            <input type="text" id="username" name="username" required maxlength="50" placeholder="Ange ditt användarnamn">
+
+            <label for="password">Lösenord:</label>
+            <input type="password" id="password" name="password" required maxlength="50" placeholder="Ange ditt lösenord">
+
+            <!-- CAPTCHA för att förhindra bots -->
+            <label for="captcha">Ange texten nedan:</label>
+            <img src="/captcha" alt="CAPTCHA" id="captcha-image">
+            <input type="text" id="captcha" name="captcha" required placeholder="Ange CAPTCHA-texten">
+
+            <button type="submit" id="login-button">Logga in</button>
+            <button type="submit" id="reg-button">Register</button>
+            <button href="gast.html" type="submit" id="gast-button">Register som gäst</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2024 Webbplats. Alla rättigheter förbehållna.</p>
+    </footer>
+
+    <script src="login.js"></script>
+</body>
+</html>

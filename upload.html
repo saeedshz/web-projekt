@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Resume</title>
+    <link rel="stylesheet" href="upload.css">
+</head>
+<body>
+    <nav>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        
+        <!-- Menu Items -->
+        <ul class="menu" id="menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="login.html">Logga in</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="form.html">Kontakt</a></li>
+        </ul>
+    
+    </nav>
+    <header><h1>Upload Your Resume</h1></header>
+    <main>
+        
+        <form action="/upload" method="POST" enctype="multipart/form-data" class="upload-form">
+            <label for="resume">Upload Resume (PDF only):</label>
+            <input type="file" id="resume" name="resume" accept=".pdf" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="5" placeholder="Write a short description about yourself..." required></textarea>
+
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </main>
+    <script src="upload.js"></script>
+    <footer>
+        <p>Alla rättigheter reserverade &copy; 2024</p>
+    </footer>
+</body>
+
+</html>
